@@ -1,16 +1,54 @@
-# React + Vite
+# Snake Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Classic Snake built with React and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Grid-based snake movement
+- Food spawning and snake growth
+- Score tracking
+- Game-over detection for wall and self collisions
+- Restart and pause controls
+- Adjustable speed with `Slow`, `Normal`, and `Fast`
+- Keyboard and on-screen controls
 
-## React Compiler
+## Run
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+From the repo root:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Or run this workspace directly:
+
+```bash
+npm run dev -w snake-game
+```
+
+Open the local Vite URL shown in the terminal, usually `http://localhost:5173/`.
+
+## Controls
+
+- `Arrow keys` or `WASD`: move the snake
+- `Space`: pause or resume
+- `Restart`: start a new game
+- `Speed`: switch between `Slow`, `Normal`, and `Fast`
+
+## Project Files
+
+- `src/App.jsx`: main game screen, controls, and reducer wiring
+- `src/snake/logic.js`: pure snake game logic for movement, collisions, growth, and food placement
+- `src/App.css`: game layout and component styles
+- `src/index.css`: shared app-level styles
+
+## Manual Verification
+
+- Snake moves correctly in all four directions
+- Reverse direction is blocked
+- Food increases score and length
+- Wall collisions end the game
+- Self collisions end the game
+- Pause and restart work as expected
+- Speed changes affect tick timing immediately
